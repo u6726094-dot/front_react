@@ -1,12 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import TestAPI from "./TestAPI";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Items } from "./Items.jsx";
+import { ItemDetail } from "./ItemDetail.jsx";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/test_api" element={<TestAPI />} />
-
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Items />} />
+        <Route path="/items/:id" element={<ItemDetail />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
